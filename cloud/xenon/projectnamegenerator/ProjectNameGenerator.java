@@ -16,22 +16,22 @@ public class ProjectNameGenerator {
         speakabel.put('b', Arrays.asList('a', 'e', 'i', 'l', 'o', 'r', 'u'));
         speakabel.put('c', Arrays.asList('h'));
         speakabel.put('d', Arrays.asList('a', 'e', 'i', 'l', 'o', 'r', 'u'));
-        speakabel.put('e', Arrays.asList('f', 'i', 'j', 'k', 'l', 'm', 'n', 'p', 'r', 's', 't', 'u'));
-        speakabel.put('f', Arrays.asList('a', 'e', 'i', 'l', 'o', 'r', 'u'));
+        speakabel.put('e', Arrays.asList('f', 'i', 'j', 'k', 'n', 'm', 'k', 'l', 'm', 'n', 'p', 'r', 's', 't', 'u'));
+        speakabel.put('f', Arrays.asList('a', 'e',  'o', 'r', 'u'));
         speakabel.put('g', Arrays.asList('a', 'e', 'i', 'l', 'o', 'u'));
         speakabel.put('h', Arrays.asList('a', 'e', 'i', 'o', 'u'));
         speakabel.put('i', Arrays.asList('b', 'f', 'k', 'l', 'm', 'n', 'p', 'r', 'h', 's', 't'));
         speakabel.put('j', Arrays.asList('a', 'e', 'i', 'o', 'u'));
-        speakabel.put('k', Arrays.asList('a', 'e', 'i', 'l', 'o', 'u'));
+        speakabel.put('k', Arrays.asList('a', 'e', 'n', 'p', 'i', 'l', 'o', 'u'));
         speakabel.put('l', Arrays.asList('a', 'e', 'i', 'o', 'u'));
         speakabel.put('m', Arrays.asList('a', 'e', 'i', 'j', 'o', 'u'));
         speakabel.put('n', Arrays.asList('a', 'e', 'i', 'o', 'u'));
-        speakabel.put('o', Arrays.asList('b', 'c', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'p', 'r', 's', 't'));
+        speakabel.put('o', Arrays.asList('b', 'c', 'i', 'l', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',  'r', 's', 't'));
         speakabel.put('p', Arrays.asList('a', 'e', 'i', 'l', 'o', 'r', 'u'));
         speakabel.put('r', Arrays.asList('a', 'i', 'e', 'o', 'u'));
         speakabel.put('s', Arrays.asList('a', 'e', 'c', 'i', 'o', 'u', 't'));
         speakabel.put('t', Arrays.asList('a', 'e', 'i', 'o', 'u'));
-        speakabel.put('u', Arrays.asList('b', 'g', 'i', 'k', 'n', 'm', 'p', 'r', 's', 't'));
+        speakabel.put('u', Arrays.asList('b', 'g', 'i',  'p', 'r', 's', 't'));
         
         
         
@@ -42,7 +42,8 @@ public class ProjectNameGenerator {
         for (int i = 0; i < length; i++) {
             List<Character> possibleChars = speakabel.get(last);
             last = possibleChars.get(random.nextInt(possibleChars.size()));
-            name.append(last);
+            if(last != null)
+                name.append(last);
         }
         return name.toString();
     }
